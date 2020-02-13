@@ -1,0 +1,335 @@
+* {box-sizing: border-box;}
+
+/*Font size for the website is 14px*/
+html{
+  font-size: 14px;
+}
+
+/*body style*/
+body {
+  margin: 0;
+  font-family: Arial;
+  text-align: justify;
+  width: 100%;
+}
+
+/*Heading 1 style*/
+h1 {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+
+/*Navigation Bar*/
+/*navBar style*/
+.navBar {
+  min-height: 80px;
+  background-image: url("../Media/headerStars.jpg"); /*Background image*/
+  background-color: #040F0F; /*If the background image fails to load black background is used*/
+  padding: 20px 10px;
+}
+
+/*navBar anchors style*/
+.navBar a {
+  float: left; /*Float so to appear in a row*/
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 1.5em;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/*Logo Style*/
+.navBar a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*navBar anchor on hover style - they highlight grey*/
+.navBar a:hover {
+  background-color: #E8E8E8;
+  color: black;
+}
+
+/*Home Link style*/
+.navBar a.Home {
+  background-color: #2171BC;
+  color: white;
+}
+
+/*nav-left anchor float left so in a row*/
+.navBar-left a{
+  float: left;
+}
+
+/*Small screen style*/
+@media screen and (max-width: 900px) {
+  /*navBar anchor style - no float*/
+  .navBar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  /*navBar-left style - no float*/
+  .navBar-left {
+    float: none;
+  }
+
+  /*Smaller font size on small screens*/
+  html{
+    font-size: 12px;
+  }
+}
+
+/*Dropdown navBar*/
+
+/*Large screen style*/
+@media screen and (min-width: 900px) {
+  /*PlanetsDropDown style*/
+  .PlanetsDropDown{
+    float: left;
+    position: relative;
+    display: inline-block;
+  }
+}
+
+/*PlanetsDropDownList style*/
+.PlanetsDropDownList{
+  display: none;
+  position: absolute;
+  width: 100%;
+  float: none;
+  font-size: .6em;
+}
+
+/*Small screen style*/
+@media screen and (max-width: 900px) {
+  /*PlanetsDropDownList*/
+  .PlanetsDropDownList{
+    position: inherit; /*Makes the Dropdown stack under the heading in small screen*/
+  }
+}
+
+/*PlanetsDropDownList anchors style*/
+.PlanetsDropDownList a{
+  display: block;
+  float: none;
+  background-color: #040F0F;
+}
+
+/*On PlanetsDropDown hover display PlanetsDropDownList*/
+.PlanetsDropDown:hover .PlanetsDropDownList{
+  display: block;
+}
+
+
+
+/*MainText style - adds a padding to the page*/
+.MainText {
+  display: block;
+  padding: 1% 10% 1% 10%;
+}
+
+
+/*Footer Navigation
+footerNav style*/
+.footerNav{
+  width: 100%;
+  background-color: #040F0F;
+  color: white;
+  margin: 0;
+  padding: 2% 10% 2% 10%;
+  bottom: 0; /*makes the footer stay at bottom of the page*/
+}
+
+/*footerNav ul style*/
+.footerNav ul{
+  margin: 0;
+  float:left; /*Float left so 3 columns are beside each other*/
+  width: 33%;
+}
+
+/*footerNav anchors style*/
+.footerNav a{
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+/*Planet Box
+PlanetBox style*/
+.PlanetBox{
+  position: relative;
+  width: 25%; /*25% so to fit 4 per row */
+  float: left;/*Float left so appear in a row*/
+  padding: 2%;
+}
+
+/*Small screen*/
+@media screen and (max-width: 900px){
+  /*PlanetBox style*/
+  .PlanetBox{
+    width: 50%;/*%0% so only 2 are on a row*/
+  }
+}
+
+/*PlanetBox Picture style*/
+.PlanetBoxPicture{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease; /*transition for hover going grey*/
+  backface-visibility: hidden;
+  border: 3px solid #2171BC;
+  border-radius: 1px;
+  box-shadow: 4px 4px 3px 1px #71A4D4;
+  object-fit: scale-down; /*Scale down the image on s,aller screens as images to big*/
+}
+
+/*PlanetBox Picture caption style*/
+.PlanetBoxTextPosition{
+  height: 20%;
+  opacity: 0;
+  position: absolute;
+  top: 75%; /*Offset from top*/
+  left: 50%; /*Offset from the left*/
+  transform: translate(-50%, -25%); /*Translate its position*/
+}
+
+/*On hover of PlanetBox, PlanetBoxPicture have 80% opacity*/
+.PlanetBox:hover .PlanetBoxPicture {
+  opacity: 0.8;
+}
+
+/*On hover of PlanetBox, PlanetBoxTextPosition has 100% opacity and has 0.5s transition*/
+.PlanetBox:hover .PlanetBoxTextPosition {
+  transition: .5s ease;
+  opacity: 1;
+}
+
+/*PlanetBoxText style*/
+.PlanetBoxText {
+  background-color: #2171BC;
+  color: white;
+  font-size: 80%;
+  padding: .5em 1em .5em 1em;
+  font-style: normal;
+}
+
+/*PlanetBoxText anchors style*/
+.PlanetBoxText a{
+  color: white;
+  text-decoration: none;
+}
+
+
+
+/*Planet table
+Add board to table*/
+.planetTable, th, td{border: 2px solid black;}
+
+/*planetTable style - board collapse and boarder width*/
+.planetTable{
+  border-collapse: collapse;
+  width: 50%;
+  float: left;
+}
+
+/*Text allign the table*/
+th {text-align: left;}
+
+/*PlanetPageImageContain style*/
+.PlanetPageImageContain{
+    float: left;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    width: 50%;
+}
+
+/*PlanetPageImage style*/
+.PlanetPageImage{
+  width: 100%;
+  height: auto;
+  float: left;
+  border: 3px solid #2171BC;
+  border-radius: 1px;
+  box-shadow: 4px 4px 3px 1px #71A4D4;
+}
+
+
+/*Sun page slideshow
+SunSlideShow style*/
+.SunSlideShow {
+  width: 50%;
+  position: relative;
+  margin: auto; /*Centers the slideshow*/
+}
+
+/*SunSlide style - hidden to start but changed by javascript*/
+.SunSlide {
+  display: none;
+}
+
+/*SunSlide image style*/
+.SunSlide img{
+  width: 100%;
+  border: 4px solid #2171BC;
+  border-radius: 2px;
+  box-shadow: 4px 4px 3px 1px #71A4D4;
+}
+
+/*SunSlideShow Arrow button style*/
+.prevSlide, .nextSlide {
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 4%;
+  color: #2171BC;
+  font-weight: bold;
+  font-size: 2em;
+  transition: 0.6s ease;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Modification to nextSlide as on opposite sides to prevSlide */
+.nextSlide {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/* On Arrow buttons hover make background black transparant colour*/
+.prevSlide:hover, .nextSlide:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/*SunCaption style*/
+.SunCaption {
+  color: white;
+  font-size: 1.5em;
+  padding: 3% 4%;
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* dotSlide style */
+.dotSlide {
+  height: 1em;
+  width: 1em;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/*If active dot of on hover change colour of dot*/
+.active, .dotSlide:hover {
+  background-color: #717171;
+}
